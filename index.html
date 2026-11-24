@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="calculator" aria-label="Calculator">
+    <header class="top">
+      <button class="history-pill" id="historyPill" type="button" aria-expanded="false" aria-controls="historyPanel" title="Show history">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l3 2M3 12a9 9 0 1 0 3-6.7L3 8m0-5v5h5" /></svg>
+        <span id="pillText">No history</span>
+      </button>
+    </header>
+
+    <section class="history-panel" id="historyPanel" hidden>
+      <div class="history-head">
+        <span>History</span>
+        <button type="button" id="clearHistory" class="link-btn">Clear</button>
+      </div>
+      <ul id="historyList" class="history-list"></ul>
+    </section>
+
+    <section class="display" aria-live="polite">
+      <div class="expression" id="expression"></div>
+      <div class="result" id="result">0</div>
+    </section>
+
+    <section class="keys">
+      <button class="key fn" data-action="clear" data-key="Escape">AC</button>
+      <button class="key fn" data-action="backspace" data-key="Backspace" aria-label="Backspace">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 5H8l-6 7 6 7h13zM17 9l-6 6M11 9l6 6" /></svg>
+      </button>
+      <button class="key fn" data-action="percent" data-key="%">%</button>
+      <button class="key op" data-op="/" data-key="/" aria-label="Divide">÷</button>
+
+      <button class="key" data-num="7" data-key="7">7</button>
+      <button class="key" data-num="8" data-key="8">8</button>
+      <button class="key" data-num="9" data-key="9">9</button>
+      <button class="key op" data-op="*" data-key="*" aria-label="Multiply">×</button>
+
+      <button class="key" data-num="4" data-key="4">4</button>
+      <button class="key" data-num="5" data-key="5">5</button>
+      <button class="key" data-num="6" data-key="6">6</button>
+      <button class="key op" data-op="-" data-key="-" aria-label="Subtract">−</button>
+
+      <button class="key" data-num="1" data-key="1">1</button>
+      <button class="key" data-num="2" data-key="2">2</button>
+      <button class="key" data-num="3" data-key="3">3</button>
+      <button class="key op" data-op="+" data-key="+" aria-label="Add">+</button>
+
+      <button class="key wide" data-num="0" data-key="0">0</button>
+      <button class="key" data-action="decimal" data-key=".">.</button>
+      <button class="key eq" data-action="equals" data-key="Enter" aria-label="Equals">=</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
